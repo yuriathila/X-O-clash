@@ -39,3 +39,6 @@ app.post("/make-move", (req, res) => {
 app.listen(port, () => {
     console.log(`Backend rodando na porta ${port}`);
 });
+
+
+// alterando coisas impotantes
