@@ -1,77 +1,54 @@
-const express = require("express");
-const cors = require("cors");
-const bodyParser = require("body-parser");
+const express = require('express');
+const http = require('http');
+const { Server } = require('socket.io');
 
 const app = express();
-const port = 3000;
+const server = http.createServer(app);
+const io = new Server(server);
 
-// Middleware
-app.use(cors());
-app.use(bodyParser.json());
+// Servir arquivos estáticos
+const path = require('path');
 
-
-app.get("/", (req, res) => {
-    res.send("Backend está rodando!");
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Rota para iniciar o jogo
-app.post("/start-game", (req, res) => {
-    const { player1, player2 } = req.body;
 
+let rooms = {};
 
-    res.status(200).json({
-        message: "Jogo iniciado!",
-        players: [player1, player2]
+io.on('connection', (socket) => {
+    console.log('Novo cliente conectado:', socket.id);
+
+    socket.on('create-room', () => {
+        const roomCode = Math.random().toString(36).substr(2, 6).toUpperCase();
+        rooms[roomCode] = { players: [] };
+        socket.join(roomCode);
+        io.to(socket.id).emit('room-created', roomCode);
+    });
+
+    socket.on('join-room', (roomCode) => {
+        if (rooms[roomCode] && rooms[roomCode].players.length < 2) {
+            rooms[roomCode].players.push(socket.id);
+            socket.join(roomCode);
+            io.to(roomCode).emit('player-joined', rooms[roomCode].players.length);
+        } else {
+            io.to(socket.id).emit('error', 'Sala cheia ou inexistente.');
+        }
+    });
+
+    socket.on('make-move', (data) => {
+        const { roomCode, index, player } = data;
+        socket.to(roomCode).emit('move-made', { index, player });
+    });
+
+    socket.on('disconnect', () => {
+        console.log('Cliente desconectado:', socket.id);
+        // Lógica para limpar salas vazias
     });
 });
 
-// Rota para fazer o movimento (simples exemplo)
-app.post("/make-move", (req, res) => {
-    const { player, position } = req.body;
-
-
-    res.status(200).json({
-        message: `Movimento realizado por ${player} na posição ${position}`,
-    });
+// Iniciar servidor
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
 });
-
-// Defina a porta do servidor
-app.listen(port, () => {
-    console.log(`Backend rodando na porta ${port}`);
-});
-
-
-// alterando coisas impotantes
-
-app.use(cors());
-app.use(bodyParser.json());
-
-
-app.get("/", (req, res) => {
-    res.send("Backend está rodando!");
-});
-
-// Rota para iniciar o jogo
-app.post("/start-game", (req, res) => {
-    const { player1, player2 } = req.body;
-
-
-    res.status(200).json({
-        message: "Jogo iniciado!",
-        players: [player1, player2]
-    });
-});
-
-// Rota para fazer o movimento (simples exemplo)
-app.post("/make-move", (req, res) => {
-    const { player, position } = req.body;
-
-
-    res.status(200).json({
-        message: `Movimento realizado por ${player} na posição ${position}`,
-    });
-});
-
-// Defina a porta do servidor
-app.listen(port, () => {
-    console.log(`Backend rodando na porta ${port}`);
