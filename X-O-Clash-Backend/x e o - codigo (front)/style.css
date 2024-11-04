@@ -1,0 +1,237 @@
+body {
+    font-family: "Poppins", sans-serif;
+   
+    font-style: normal;
+    background-color: #060037;
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+}
+
+h1{
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+header {
+    display: flex;
+    text-align: center;
+    margin-bottom: 30px;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: .8rem;
+    background-color: #010023;
+    min-height: 50px;
+    border-radius: 900px;
+    
+}
+
+.box-img-header{
+    height: 100%;
+}
+
+box-btn-action{
+    display: flex;
+    gap: 1rem;
+    font-family: "Press Start 2P", system-ui;
+}
+
+
+button{
+    padding: .6rem;
+    
+}
+.img-logo{
+    max-width: 190px;
+    height: 100%;
+    
+}
+nav{
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: x-large;
+    font-weight:bold ;
+}
+
+.nav-links:hover{
+    color: #00a8e1;
+    transition: .4s;
+    text-decoration: underline;
+}
+
+h1 {
+    color: #ffffff;
+    border-radius: 20%;
+}
+
+main {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #162447;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #00a8e1;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    font-family: "Press Start 2P", system-ui;
+}
+
+button:hover {
+    background-color: #e94560;
+    transition: .4s;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.section01{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+    min-height: 650px;
+}
+
+
+
+.section01 >div{
+    display: flex;
+    flex-direction: column;
+    gap: .1rem;
+    min-width: 300px;
+}
+.button-section1{
+    background-color: transparent;
+
+    border: 2px solid #e94560;
+    padding: .8rem 0 .8rem 0 ;
+
+
+}
+strong{
+    color: #00e1ff;
+}
+
+p{
+    font-size: medium;
+}
+
+.ilustracao01{
+    width: 100px;
+    height: 100px;
+    object-fit: fill;
+  }
+
+  /* Diminuindo o tamanho dos botões e centralizando a imagem e o texto */
+button {
+    background-color: #00a8e1;
+    color: white;
+    border: none;
+    padding: 10px 10px; /* Ajustando o padding para diminuir o tamanho */
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    font-family: "Press Start 2P", system-ui;
+}
+
+button:hover {
+    background-color: #e94560;
+    transition: .4s;
+}
+
+.button-section1 {
+    background-color: transparent;
+    border: 2px solid #e94560;
+    padding: 8px 20px; /* Ajuste fino no espaço entre o texto e a borda */
+    font-size: 16px; /* Ajuste do tamanho da fonte para ficar proporcional */
+    color: #ffffff;
+    font-family: "Press Start 2P", system-ui;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.button-section1:hover {
+    background-color: #e94560; /* Efeito de hover */
+    transition: .4s;
+}
+
+.section01 {
+    display: flex;
+    justify-content: center; /* Centralizando o conteúdo */
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+
+
+
+
+.ilustracao01 {
+    width: 200px;  
+    height: 200px;
+    object-fit: cover;
+    
+}
+
+.ilustracao01{
+    position: relative;
+    display: inline-block;
+    box-shadow: 0px 0px 20px 10px rgba(233, 69, 96, 0.8); /* Cor e intensidade do brilho */
+    border-radius: 10px; /* Ajuste se a imagem for arredondada */
+    transition: box-shadow 0.4s ease;
+}
+
+.ilustracao01:hover {
+    box-shadow: 0px 0px 30px 15px rgba(233, 69, 96, 1); /* Aumenta o brilho ao hover */
+}
+
+
+.texto-section01 {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o texto */
+    text-align: center;
+}
+
+.section01 {
+    background-image: linear-gradient(rgba(0, 0, 0, 2.5), rgba(0, 0, 0, 0.5)), url('C:/Users/Yuri/Downloads/marioimg.jpeg');
+    background-size: cover;
+    background-size: cover; /* A imagem cobre toda a área da seção */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita a repetição da imagem */
+    color: #fff; /* Define a cor do texto para contrastar com o fundo */
+    height: 500px; /* Ajuste conforme necessário */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
