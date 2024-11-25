@@ -1,0 +1,240 @@
+/* Geral */
+
+*{
+    text-decoration: none;
+}
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #060037;
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 0.8rem;
+    background-color: #010023;
+    border-radius: 900px;
+    text-align: center;
+}
+
+.box-img-header {
+    height: 100%;
+}
+
+.img-logo {
+    max-width: 190px;
+}
+
+nav {
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-links {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.nav-links:hover {
+    color: #00a8e1;
+    transition: 0.4s;
+    text-decoration: underline;
+}
+
+.box-btn-action {
+    display: flex;
+    gap: 1rem;
+}
+
+button {
+    padding: 0.6rem;
+    background-color: #00a8e1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Press Start 2P", system-ui;
+}
+
+button:hover {
+    background-color: #ff00aa;
+    transition: 0.4s;
+}
+
+/* Seção Principal */
+main {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #162447;
+}
+
+.section01 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('image/marioimg.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.texto-section01 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.texto-section01 h1 {
+    font-family: "Press Start 2P", system-ui;
+    color: #ffffff;
+}
+
+.texto-section01 strong {
+    color: #00e1ff;
+}
+
+.button-section1 {
+    background-color: transparent;
+    border: 2px solid #e94560;
+    padding: 0.8rem 1.5rem;
+    color: #ffffff;
+    font-family: "Press Start 2P", system-ui;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.button-section1:hover {
+    background-color: #e94560;
+    transition: 0.4s;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Títulos */
+.title {
+    font-size: 1.8rem;
+    color: #00e5ff; /* Cor verde para destacar */
+    
+    text-transform: uppercase; /* Texto em maiúsculas */
+    text-decoration: none; /* Remove o sublinhado */
+   
+  
+}
+
+header nav{
+  
+    text-transform: uppercase; 
+    text-decoration: none; 
+    
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+  }
+  
+  .box {
+    width: 30%; /* Adjust width as needed */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  
+    color: #fff;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0 10px; /* Adjust margin for spacing between boxes */
+  }
+
+
+  
+ 
+  .box  {
+    /* Estilos adicionais para as caixas com a classe summary */
+    transition: 0.2s;
+  }
+  
+  .box:hover {
+    box-shadow: 0px 0px 10px 8px #00e1ff;
+    inset: 0px 0px 10px 2px #00e1ff;
+    transform: scale(1.05);
+  }
+
+  nav{ /* Substitua por uma classe mais específica se necessário */
+    text-transform: uppercase; /* Torna todo o texto maiúsculo */
+    text-decoration: none; /* Remove o sublinhado */
+    color: #fff; /* Define a cor do texto */
+    /* Outros estilos */
+  }
+  
+  .secao-apoiadores {
+
+    padding: 50px;
+    text-align: center;
+}
+
+.secao-apoiadores h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.secao-apoiadores p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.secao-apoiadores form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+}
+
+.secao-apoiadores input[type="email"] {
+    padding: 10px;
+    border: 1px solid #00d5ff;
+    border-radius: 5px;
+    margin-bottom: 10px;
+   
+}
+
+.secao-apoiadores button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.depoimentos {
+    margin-top: 30px;
+}
+
+.depoimentos h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
